@@ -1,5 +1,5 @@
 
-from random import randint
+from random import randint #For generating random numbers
 
 def greet():
     """
@@ -15,9 +15,10 @@ def greet():
 #Calls the greet function to display the welcome message
 greet()
 
+#Flag to track whether to restart the game
 flag = False
 
-#Loop to keep the game running until the user decides to stop
+#Main Game Loop
 while True:
     #Prompts the user for a number
     number = input("What are the odds you give me an A?: ")
@@ -26,7 +27,7 @@ while True:
     try:
         number = int(number)
 
-    #If conversion fails, prompts the user to try again
+    #Inform the user of invalid input and restart the loop
     except ValueError:
         print("You did not give me an integer.\n Please try again")
         continue
@@ -36,7 +37,7 @@ while True:
         choice = int(number)
         assert choice > 0
 
-    #If a negative number is entered, asks the user to try again
+    #Inform the user that negative numbers aren't valid
     except AssertionError:
         print("Negative numbers do not work here. \n Please try again")
         continue
@@ -54,7 +55,7 @@ while True:
         try:
             guess = int(guess)
 
-        #If conversion fails, prompts the user to try again
+        #Inform the user of invalid input and restart the inner loop
         except ValueError:
             print("You did not give me an integer.\n Please try again")
             continue
@@ -64,11 +65,11 @@ while True:
 
         #Conditions for determining the outcome based on the guess...
 
-        #Script (Jacob) wins
+        #Script wins
         if guess == scope and guess + scope != number:
             print("Thanks for the A!")
 
-        #User and Script (Jacob) win
+        #Both win
         elif guess + scope == number and guess == scope:
             print("I guess we both get A's??")
 
@@ -83,7 +84,7 @@ while True:
         #Asks the user if they want to play again
         repeat = input("Do you want to try again? Enter y if you do or n if you don't: ")
 
-        #If the user chooses not to continue, exits the game
+        #Exit the game if the user chooses not to play again
         if repeat == 'n':
             print("Thanks for playing!")
             quit()
