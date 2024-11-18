@@ -1,19 +1,8 @@
 
 from random import randint #For generating random numbers
 
-def greet():
-    """
-    Greets a new user to the game
-
-    Args:
-        (None)
-    Returns:
-        (None, it executes a print function but doesn't actually return anything meaningful)
-    """
-    print("Hello, welcome to my 'What are the Odds?' game \n Answer the questions to play!")
-
-#Calls the greet function to display the welcome message
-greet()
+#Greets the user
+print("Hello, welcome to my 'What are the Odds?' game \n Answer the questions to play!")
 
 #Flag to track whether to restart the game
 flag = False
